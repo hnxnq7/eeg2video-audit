@@ -2,17 +2,9 @@
 
 ## SEED-DV Dataset
 
-The SEED-DV dataset is not included in this repository. Please follow the steps below to obtain it.
+The SEED-DV dataset is not yet included in this repository. Waiting on approval from the data access form.
 
-### Download
-
-1. Visit the official SEED-DV release page (linked from the EEG2Video repo):
-   https://github.com/XuanhaoLiu/EEG2Video
-
-2. Fill out the data access form if required by the dataset maintainers.
-
-3. Download and extract the dataset to this `data/` directory (or update
-   `configs/config.yaml` to point to your local copy).
+When approved, we will download and extract the dataset to this `data/` directory.
 
 ### Expected Structure
 
