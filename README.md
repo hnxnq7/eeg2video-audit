@@ -103,16 +103,6 @@ Outputs: Per-fold SSIM, CLIP distance variance; worst-vs-best gap table.
 
 ---
 
-## Team
-
-| Member | Responsibility |
-|---|---|
-| **Member 1** | Data & Stratification — preprocessing, baseline reproduction, RQ1 |
-| **Member 2** | Temporal Analysis — sliding-window infrastructure, RQ2, statistical tests |
-| **Member 3** | Robustness & Reconstruction — block rotation, RQ3, final writeup |
-
----
-
 ## Timeline
 
 | Weeks | Milestone |
