@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — never commit raw EEG or video data
+data/raw/
+data/videos/
+*.mat
+*.pkl
+*.h5
+*.hdf5
+
+# Results — commit figures but not heavy outputs
+results/*.csv
+results/*.npy
+results/*.pt
+# Keep figures in version control:
+!results/figures/*.png
+!results/figures/*.pdf
+
+# Checkpoints / model weights
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Config overrides (keep config.yaml but ignore local overrides)
+configs/local_*.yaml
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+# EEG2Video Validity Audit — Master Configuration
+# ─────────────────────────────────────────────────────────────
+
+# ── Paths ────────────────────────────────────────────────────
+data:
+  root_dir:    "data/"            # root of SEED-DV data
+  results_dir: "results/"
+  figures_dir: "results/figures/"
+
+# ── Dataset ──────────────────────────────────────────────────
+dataset:
+  n_subjects:  20
+  n_blocks:    7
+  n_channels:  62
+  sfreq:       200                # Hz
+  epoch_s:     2.0                # seconds per epoch
+  run_length:  5                  # clips per same-concept run
+  subject_ids: null               # null = all subjects
+  block_ids:   null               # null = all blocks
+
+# ── Model ────────────────────────────────────────────────────
+model:
+  name:        "eegnet"           # "eegnet" | "linear"
+  F1:          8
+  D:           2
+  F2:          16
+  dropout:     0.5
+
+# ── Training ─────────────────────────────────────────────────
+training:
+  batch_size:  64
+  lr:          1.0e-3
+  epochs:      50
+  weight_decay: 1.0e-4
+  device:      "cuda"             # "cuda" | "cpu"
+
+# ── E1: Run-Position ─────────────────────────────────────────
+run_position:
+  tasks:
+    - concept
+    - concept_coarse
+    - color
+    - motion
+
+# ── E2: Temporal Sliding Window ──────────────────────────────
+temporal:
+  window_ms:   300
+  stride_ms:   50
+  tasks:
+    - concept
+    - color
+    - motion
+
+# ── E3: Split Robustness ─────────────────────────────────────
+robustness:
+  use_clip_fallback:  true        # use CLIP distance instead of full video SSIM
+  original_test_block: 7          # block held out in the original paper
+
+# ── Misc ─────────────────────────────────────────────────────
+seed: 42
